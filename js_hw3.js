@@ -15,3 +15,5 @@ if (getDay() = 4 && getDate = 13) {
 // finds any day with any parameters
 
 // use 13 day + 1 month
+
+//test
