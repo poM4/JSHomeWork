@@ -6,62 +6,34 @@
 // how many players will play?
 // how many rounds will the game long?
 // put players info into array
-//
 
-
-function Player(strName){
-		this.Name = strName;
-		this.Result = 0;   //8
-		this.strSum = ""; //" + 1 + 5 + 2"	
-		
-		this.Turn = function(){
-			temp = Random(6)
-			this.Result += temp; // from 1 to 6
-			this.strSum = this.strSum + " + " + temp		
-		}
+function player(strName) {
+	this.name = strName;
+	this.result = 0;
+	this.strSum = "";
+	this.random = function() {
+		this.number = Math.floor(Math.random() * (6 - 1) + 6);
+		return this.number;
 	}
-	
-	function Dice(PlayerCount, TurnCount){
-		PlArray = new Array();
-		for (i=0;i<PlayerCount; i++){
-			CurrPlayer = new Player("Player " + (i+1));
-			PlArray.push(CurrPlayer);
-		}
-		for (i=0;i<PlArray.length; i++){
-			WScript.Echo(PlArray(i).Name + "; /n" + PlArray(i).Result);
-		}
-		for (i=0;i<PlArray.length; i++){
-			for (j=0; j < TurnCount; j++) WScript.Echo(PlArray(i).Turn());
-		}
-		for (i=0;i<PlArray.length; i++){
-			WScript.Echo(PlArray(i).Name + "; /n" + PlArray(i).Result);
-		}
-		//sort
-		
+	this.turn = function() {
+		this.result += this.random;
+		this.strSum = this.strSum + " + " + this.random;
 	}
-	
-
-
-
-
-
-players = 
-
-
-
-
-
-
-// Chose how much players will play
-playersCount();
-
-// Chose how much rounds will be in game
-roundsCount();
-
-
-// Chose how many sides dice has
-function diceSettings (side) {
-	return var sideCount = Math.floor((Math.random() * side) + 1);
 }
 
-Math.floor(Math.random() * (6 - 1) + 6);
+function game(playersCount, turnsCount) {
+	playersArray = new Array();
+	for (i = 0; i < playersCount; i++) {
+		currPlayer = new player ("Player " + (i+1));
+		playersArray.push(currPlayer);
+	}
+	for (i = 0; i < playersArray.length; i++) {
+		WScript.Echo(playersArray(i).name + ". Result: " + playersArray(i).result);
+	}
+	for (i = 0;i < PlArray.length; i++) {
+			for (j = 0; j < turnsCount; j++) WScript.Echo(playersArray(i).turn());
+	}
+	playersArray.sort();			
+}
+game(2, 3);
+
