@@ -12,12 +12,13 @@ function player(strName) {
 	this.result = 0;
 	this.strSum = "";
 	this.random = function() {
-		this.number = Math.floor(Math.random() * (6 - 1) + 6);
-		return this.number;
+		this.number = Math.floor(Math.random() * 6 ) + 1;
+//		return this.number;
 	}
 	this.turn = function() {
 		this.result += this.random;
-		this.strSum = this.strSum + " + " + this.random;
+		return this.result;
+//		this.strSum = this.strSum + " + " + this.random;
 	}
 }
 
@@ -28,12 +29,16 @@ function game(playersCount, turnsCount) {
 		playersArray.push(currPlayer);
 	}
 	for (i = 0; i < playersArray.length; i++) {
-		WScript.Echo(playersArray(i).name + ". Result: " + playersArray(i).result);
+		WScript.Echo(playersArray[i].name + ". Result: " + playersArray[i].result);
 	}
-	for (i = 0;i < PlArray.length; i++) {
-			for (j = 0; j < turnsCount; j++) WScript.Echo(playersArray(i).turn());
+	for (i = 0;i < playersArray.length; i++) {
+			for (j = 0; j < turnsCount; j++) { 
+				WScript.Echo(playersArray[i].turn());
+			}
 	}
-	playersArray.sort();			
+	for (i = 0;i < playersArray.length; i++){
+			WScript.Echo(playersArray[i].name + "; /n" + playersArray[i].result);
+		}
+//	playersArray.sort();			
 }
-game(2, 3);
-
+game(1, 3);
