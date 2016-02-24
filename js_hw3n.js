@@ -52,3 +52,33 @@ else
 WScript.Echo("today <: " + formatdate(otherDate, ".") + " today: " +formatdate(today, "."));
 }
 }
+
+
+//today info
+// date format
+function dateFormat (dDate, delimeter) {
+	dd = dDate.getDate() + 1;
+	if (dd < 10) {
+		dd = "0" + dd;
+	};
+	mm = dDate.getMonth() + 1;
+	if (mm < 10) {
+		mm = "0" + mm;
+	}
+	yyyy = dDate.getYear();
+	return dd + delimeter + mm + delimeter + yyyy;
+}
+
+// set end date fuction
+var startDate = new Date(2016, 0, 23);
+var endDate = new Date();
+if (startDate < endDate) {
+	WScript.Echo("today: " + dateFormat(endDate, ".") + " is bigger than set date: " + dateFormat(startDate, "."));
+	}
+	else
+	{
+	WScript.Echo("today: " + dateFormat(endDate, ".") + " is less than set date: " + dateFormat(startDate, "."));
+	}
+	
+// day counter
+if ()
