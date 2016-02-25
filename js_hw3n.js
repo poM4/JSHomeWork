@@ -1,84 +1,31 @@
-function daysCounter(startDate, endDate, ) {
-	this.sDate = startDate;
-	this.eDate = endDate;
-	
-	this.counter = function
-	
-	return
-	
-}
+//3. Write a script to calculate how much Friday 13th was in 21th century (since 01/01/2000 - till now).
 
-var fridayThirteensCounter = new daysCounter ()
+/* Ход моих мыслей:
+1. сделать объект, который будет приводить дату в формат (в коде "setting date in "dd.mm.yyyy" format")
+2. используя объект с датой в правильном формате, я попытался найти сегодняшнюю дату. и тут у меня не получаеться сделать связь между объектом date и новым объектом todaysDate
+3. "how many friday thirteens" это тот счетчик, который и будет считать пятницы 13ые. пока только в простом виде, т.к. хочеться еще подставлять даты из объектов выше.
 
-
-
-
-// setting date in "dd.mm.yyyy" format
-function date(day, month, year) {
-	this.dd = day;
-	this.mm = month;
-	this.yyyy = year;
-	this.fullDate = dd + '.' + mm + '.' + yyyy;
-}
-// finding todays date
-function todaysDate() {
-	var today = new Date();
-	var dd = today.getDate();
-	var mm = today.getMonth() + 1; 
-	var yyyy = today.getFullYear();
-
-	if(dd < 10) {
-		dd='0' + dd
-	} 
-	if(mm < 10) {
-		mm='0' + mm
-	} 
-
-today = dd + '.' + mm + '.' + yyyy;
-return today;
-}
-
-// sasha comments
-function test(){
-var today = new Date();
-WScript.Echo(today.getMinutes() + ":" + today.getMilliseconds());
-var otherDate = new Date(2016, 1, 24);
-WScript.Echo(otherDate.getMinutes() + ":" + otherDate.getMilliseconds());
-if (today > otherDate) {
-WScript.Echo("today >: " + formatdate(otherDate, "."));
-}
-else
-{
-WScript.Echo("today <: " + formatdate(otherDate, ".") + " today: " +formatdate(today, "."));
-}
-}
+На выходе, я хотел чтобы получилось:
+1. функцию входные параметры поторой:
+а. starDate - дата откуда мы хотим считать пятницы (в данном случае "01.01.2000")
+б. endDate - сегодняшнюю дату
+2. на выходе получить сумму пятниц 13х
+*/
 
 
-//today info
-// date format
-function dateFormat (dDate, delimeter) {
-	dd = dDate.getDate() + 1;
-	if (dd < 10) {
-		dd = "0" + dd;
-	};
-	mm = dDate.getMonth() + 1;
-	if (mm < 10) {
-		mm = "0" + mm;
-	}
-	yyyy = dDate.getYear();
-	return dd + delimeter + mm + delimeter + yyyy;
-}
-
-// set end date fuction
-var startDate = new Date(2016, 0, 23);
+var startDate = new Date(2012, 1, 23);
 var endDate = new Date();
-if (startDate < endDate) {
-	WScript.Echo("today: " + dateFormat(endDate, ".") + " is bigger than set date: " + dateFormat(startDate, "."));
-	}
-	else
-	{
-	WScript.Echo("today: " + dateFormat(endDate, ".") + " is less than set date: " + dateFormat(startDate, "."));
-	}
-	
-// day counter
-if ()
+var tempDate = endDate;
+var sum = 0;
+//WScript.Echo(startDate);
+//WScript.Echo(endDate);
+//WScript.Echo(tempDate);
+
+//for (i = tempDate.getFullYear(); i <= endDate.getFullYear(); i = tempDate.setFullYear(tempDate.getFullYear()+1)) {
+//	for (j = tempDate.getMonth; j <= 11; j = endDate.setMonth(tempDate.getMonth) + 1) {
+//		if (tempDate.getDay() = 4 && tempDate.getDate() = 13) {
+//			return sum++;
+//		}
+//	}
+//}			
+//WScript.Echo(sum);
