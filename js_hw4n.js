@@ -1,6 +1,4 @@
-//4. Write a script to solve quadratic equation (wiki). Input parameters: a, b, c; output parameter should be
-// string with result. Result should contain solution for cases when result is: real number, unreal number
-// and when discriminant is equal to zero.
+//4. Write a script to solve quadratic equation (wiki). Input parameters: a, b, c; output parameter should be string with result. Result should contain solution for cases when result is: real number, unreal number and when discriminant is equal to zero.
 
 function quadEquation (a, b, c) {
 	var dis = Math.pow(a, 2) + 4 * a * c;

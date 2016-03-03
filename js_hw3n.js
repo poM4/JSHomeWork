@@ -1,39 +1,21 @@
-function daysCounter(startDate, endDate, ) {
-	this.sDate = startDate;
-	this.eDate = endDate;
-	
-	this.counter = function
-	
-	return
-	
+//3. Write a script to calculate how much Friday 13th was in 21th century (since 01/01/2000 - till now).
+
+function countFridayThirteens (startYear, startMonth, startDay) {
+	var startDate = new Date(startYear, startMonth-1, startDay);
+	var endDate = new Date();
+	var tempDate = startDate;
+	var sum = 0;
+
+	for (i = tempDate.getFullYear(); i <= endDate.getFullYear(); i = tempDate.setFullYear(tempDate.getFullYear()+1)) {
+		for (j = tempDate.getMonth(); j <= 11; j = tempDate.setMonth(tempDate.setMonth()+1)) {
+			if (tempDate.getDay() === 4 && tempDate.getDate() === 13) {
+				sum++;
+			}
+		}
+	}
+WScript.Echo("There were " + sum + " Friday 13ths from " + startDate.getFullYear() + " year till now");
 }
-
-var fridayThirteensCounter = new daysCounter ()
-
+countFridayThirteens (2016, 1, 1);
 
 
 
-// setting date in "dd.mm.yyyy" format
-function date(day, month, year) {
-	this.dd = day;
-	this.mm = month;
-	this.yyyy = year;
-	this.fullDate = dd + '.' + mm + '.' + yyyy;
-}
-// finding todays date
-function todaysDate() {
-	var today = new Date();
-	var dd = today.getDate();
-	var mm = today.getMonth() + 1; 
-	var yyyy = today.getFullYear();
-
-	if(dd < 10) {
-		dd='0' + dd
-	} 
-	if(mm < 10) {
-		mm='0' + mm
-	} 
-
-today = dd + '.' + mm + '.' + yyyy;
-return today;
-}
