@@ -21,11 +21,15 @@ function game (playersCount, roundsCount) {
 	for (i = 0; i < playersArray.length; i++) {
 		for (j = 0; j < roundsCount; j++) {
 			playersArray[i].turn();
-			WScript.Echo(playersArray[i].name + (", Round: " + (j+1)) + ", Result: " + playersArray[i].result);
-			
+			WScript.Echo(playersArray[i].name + (", Round: " + (j + 1)) + ", Result: " + playersArray[i].result);
 		}
 	}
+//	function compare (){
+//		if sum1 > sum2 {
+//			WScript.Echo(sum1 + ">" + sum2 + ". Player"  )
+//		}
+//	}
 	
-
+	WScript.Echo("Who wins?");
 }
 game (2,3);
