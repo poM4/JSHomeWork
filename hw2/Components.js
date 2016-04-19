@@ -1,3 +1,5 @@
+//USEUNIT 
+
 function StatApp() {
 	
 	//pre-action
@@ -8,7 +10,7 @@ function StatApp() {
 	start app
 	
 	//post-action
-	if (app os running)  {
+	if (app is running)  {
 		log success
 		return true;
 	}
@@ -17,7 +19,22 @@ function StatApp() {
 }
 
 function CreateOrder(data, expResult) {
-	
+	//pre-action
+	if (!app is running) {
+		log error ("app is not running");
+		return false;
+	}
+	var rowCountBefore = get row count;
+	var bExist = row with data exists ? true : false
 	
 }
 
+function EditOrder() {
+	
+}
+function DeleteOrder() {
+	
+}
+function CloseApp() {
+	
+}
