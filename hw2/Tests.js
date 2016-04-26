@@ -1,5 +1,5 @@
 //USEUNIT Components
-function OrderWorkFlow {
+function FullOrderWorkFlow {
 	StartApp();
 	CreatedOrder();
 	EditOrder();

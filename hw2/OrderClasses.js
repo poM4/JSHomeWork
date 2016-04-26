@@ -5,19 +5,21 @@ function cOrders() {
 		//pre-action
 		if (!is orders process running) {
 			if (bLogError) {
-			log error ("Process is not running");
+			log.error ("Process is not running");
 			}
 			else {
-				log message ("Process is not running");
+				log.message ("Process is not running");
 			}
 			return false;
 		} 
-			
-		//action
-		orders window exists
-		//post-action
 		return true;
+		
+		//action
+		logorders window exists
+		//post-action
+		
 	}
 }
 
-//test test test
+		
+		
