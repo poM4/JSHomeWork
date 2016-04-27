@@ -19,19 +19,20 @@ function StatApp() {
 	return false;
 }
 
-function CreateOrder(data, expResult) {
+function CreateOrder() {
 	//pre-action
-	if (!app is running) {
-		log error ("app is not running");
+	if (!oOrders.isRrunning) {
 		return false;
-	}
+	} else {
+		StartApp();
+	};
 	
-	
+	//action
 	var oGrid = new cGrid(link to grid object)
 	var rowCountBefore = oGrid.getRowCount();
 	var iRow = oGrid.getRowIndexByText() 0 true : false
 	
-	//action
+	
 	create order
 	
 	//post-action
