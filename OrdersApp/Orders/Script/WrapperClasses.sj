@@ -31,6 +31,8 @@ function cForm(oForm) {
 		check if data was filled
 }
 
+//-------------------------------------
+//function Filling TextBox
 function cTextBox(oTextBox) {
 	//pre-action
 	function isValid() {
@@ -63,6 +65,12 @@ function cTextBox(oTextBox) {
   return true;
   } else 
   Log.Error("Value has not been set with wText property", "Expected: " + sValue + "Actual: " + this.getValue());
-	
-	
+}
+
+
+//-------------------------------------
+//function Clicking button
+function cSubmitButton(oSubmitButton) {
+  //pre-action
+  
 }

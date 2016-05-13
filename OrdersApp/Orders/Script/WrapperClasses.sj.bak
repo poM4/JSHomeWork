@@ -47,12 +47,22 @@ function cTextBox(oTextBox) {
 			Log.Error ("Wrong data type, expected string", "Actual type: " + typeof(sValue));
 			return false;
 		}
+  } 	
+  this.getValue = function () {
+  
+  } 
+    
+    
     //setting text
-    cTextBox.wText = sValue;
-	}
+    cTextBox.wText.Keys(sValue);
+
 	
 	//post-action
-	
+  if (this.getValue() == sValue) {
+  Log.Message ("Value has beem set with wText property");
+  return true;
+  } else 
+  Log.Error("Value has not been set with wText property", "Expected: " + sValue + "Actual: " + this.getValue());
 	
 	
 }
