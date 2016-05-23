@@ -1,29 +1,26 @@
 ﻿//USEUNIT OrderClasses
-//USEUNIT WrapperClasses
 
 //-------------------------------------
-//function Starting app
+//Starting app
 function StatApp() {
 	
 	//pre-action
 	var oOrders = new cOrders();
-	if (oOrders.isRrunning) return true;
+	if (oOrders.isRrunning(false)) {
+    return true;
+    }
 	
 	//action
 	TestedApps.Orders.Run();
 	
 	//post-action
-	if (oOrders.isRrunning)  {
-		log success
-		return true;
-	}
-	else log error
-	return false;
-}
+	return oOrders.isRrunning(true); 
 
-//---------
-//function Creating order
+
+//-------------------------------------
+//Creating order
 function CreateOrder() {
+
 	//pre-action
 	if (!oOrders.isRrunning) {
 		return false;
@@ -44,10 +41,21 @@ function CreateOrder() {
 	
 }
 
-
+/*
+TODO
+//-------------------------------------
+//Editing Order
 function EditOrder() {
 	//pre-action
-	check order with index exists
+	if (!oOrders.isRrunning) {
+		return false;
+	} else {
+		StartApp();
+	};
+  
+  if(!oCreatedOrder.exists) {
+    return false;
+  } else CreateOrder();
 	
 	//action
 	open, edit and change order
@@ -55,6 +63,10 @@ function EditOrder() {
 	//post-action
 	check order with index changed
 }
+
+
+//-------------------------------------
+//Deleting Order
 function DeleteOrder() {
 	//pre-action
 	check order with index exists
@@ -65,13 +77,22 @@ function DeleteOrder() {
 	//post-action
 	check order deleted
 }
+
+*/
+
+//-------------------------------------
+//Starting app
 function CloseApp() {
 	//pre-action
-	check Orders app runnig
+	var oOrders = new cOrders();
+	if (oOrders.isRrunning(false)) {
+    return true;
+  };
 	
 	//action
-	close Orders app
+	TestedApps.Orders.Close();
 	
 	//post-action
-	check Orders app is not in proccess (closed)
-}
+	return oOrders.isClosed(); 
+};
+

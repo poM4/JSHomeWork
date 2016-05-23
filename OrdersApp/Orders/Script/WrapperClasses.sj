@@ -32,6 +32,7 @@ function cForm(oForm) {
 }
 
 //-------------------------------------
+
 //function Filling TextBox
 function cTextBox(oTextBox) {
 	//pre-action
@@ -65,12 +66,19 @@ function cTextBox(oTextBox) {
   return true;
   } else 
   Log.Error("Value has not been set with wText property", "Expected: " + sValue + "Actual: " + this.getValue());
-}
-
+};
 
 //-------------------------------------
-//function Clicking button
+//function Clicking Submit(Ok) button
 function cSubmitButton(oSubmitButton) {
   //pre-action
   
 }
+//-------------------------------------
+//function Clicking Submit(Ok) button
+function cCancelButton(oCancelButton) {
+
+};
+
+
+

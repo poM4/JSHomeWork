@@ -1,9 +1,10 @@
 ﻿//USEUNIT Components
-function FullOrderWorkFlow {
+
+//-------------------------------------
+//Running Create and Edit order workflow
+function CreateEditOrderWorkFlow {
 	StartApp();
-	CreatedOrder();
+	CreateOrder();
 	EditOrder();
-	DeleteOrder();
 	CloseApp();
-	
 }
