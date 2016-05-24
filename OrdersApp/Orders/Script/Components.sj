@@ -1,4 +1,5 @@
 ﻿//USEUNIT OrderClasses
+//USEUNIT WrapperClasses
 
 //-------------------------------------
 //Starting app
@@ -28,18 +29,22 @@ function CreateOrder() {
 		StartApp();
 	};
 	
-	//action
-	var oGrid = new cGrid(link to grid object)
+	//Creating order
+	var oGrid = new cGrid(linkToGridObject);
 	var rowCountBefore = oGrid.getRowCount();
-	var iRow = oGrid.getRowIndexByText() 0 true : false
+	var iRow = oGrid.getRowIndexByText();
+  if (iRow >= 0) {
+    return true;
+  } else (iRow < 0) {
+    return false;
+  };
+  oOrders.ClickMainMenuItem("Orders|New order...")
+  oOrders.FillForm([array]);
+  var rowCountAfter = oGrid.getRowCount();
 	
-	
-	create order
-	
-	//post-action
-	check if order created
-	
-}
+	//Check order created
+	oOrders.CheckOrderCreated(rowCountBefore, rowCountAfter);
+};
 
 /*
 TODO
@@ -69,7 +74,15 @@ function EditOrder() {
 //Deleting Order
 function DeleteOrder() {
 	//pre-action
-	check order with index exists
+	if (!oOrders.isRrunning) {
+		return false;
+	} else {
+		StartApp();
+	};
+  
+  if(!oCreatedOrder.exists) {
+    return false;
+  } else CreateOrder();
 	
 	//action
 	delete order
@@ -81,7 +94,7 @@ function DeleteOrder() {
 */
 
 //-------------------------------------
-//Starting app
+//Closing app
 function CloseApp() {
 	//pre-action
 	var oOrders = new cOrders();
@@ -93,6 +106,5 @@ function CloseApp() {
 	TestedApps.Orders.Close();
 	
 	//post-action
-	return oOrders.isClosed(); 
+	oOrders.isClosed(); 
 };
-

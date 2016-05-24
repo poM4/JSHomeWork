@@ -1,8 +1,10 @@
 ﻿//USEUNIT WrapperClasses
+
+//--------------Order classes--------------
 function cOrders() {
 
-//-------------------------------------
-//Checking app is running	
+  //-------------------------------------
+  //Checking app is running	
 	this.isRunning = function(bLogError) {
 		//pre-action
     var oProcess = Sys.FindChild(["ProcessName", "Index"], ["Orders", 1]);
@@ -27,8 +29,8 @@ function cOrders() {
 		return true;
 	}
   
-//-------------------------------------
-//Checking app is closed
+  //-------------------------------------
+  //Checking app was closed
   this.isClosed = function() {
   //pre-action
   var oProcess = Sys.FindChild(["ProcessName", "Index"], ["Orders", 1]);
@@ -44,11 +46,66 @@ function cOrders() {
     Log.Message("Orders window is closed");
   } else {
     Log.Error("Orders window was not closed");
-  }
-  
-  //post-action
+  };
   return true;
+  };
   
+  //-------------------------------------
+  //Checking app was closed  
+  this.ClickMainMenuItem = function(path) {
+    var oGrid = new cGrid();
+  //TODO
+  };
+  
+  
+  
+
+  //-------------------------------------
+  //Creating order with data
+  this.FillForm = function(productType, productQuantity) {
+    
+    
+    var cForm = new oForm();
+    var clientInfo = new Array();
+    
+    
+    oForm.setComboBox(productType);
+    oForm.setTextBoxValue(productQuantity);
+    oForm.setTextBoxValue(pricePerUnit);
+    oForm.setTextBoxValue(orderDiscount);
+		oForm.setDateBoxValue(orderDate);
+		oForm.setTextBoxValue(customerName);
+		oForm.setTextBoxValue(customerStreet);
+		oForm.setTextBoxValue(customerCity);
+		oForm.setTextBoxValue(customerState);
+		oForm.setTextBoxValue(customerZip);
+		oForm.setRadioButtonValue(cardType);
+    oForm.setTextBoxValue(customerCardNumber);
+		oForm.setTextBoxValue(customerCardExpDate);
+		cForm.setClickButton (okButton);
+		};	
+  };
+
+
+  //-------------------------------------
+  //Checking order was created
+
+
+  //-------------------------------------
+  //Checking order was created
+  this.CheckOrderCreated = function(oldRows, newRows) {
+    
+    //pre-condition
+    this.oldRows = oldRows;
+    this.newRows = newRows;
+    
+    //action
+    if (this.oldRows + 1 == this.iNewRow) {
+    Log.Message("Order was created");
+    } else {
+    Log.Error("Order was not created");
+    };
+  };
   
   
 
@@ -60,24 +117,4 @@ function cOrders() {
   
   
   
-  /*
-this.fillForm = function (array of data) {
-		choose productType
-		fill productQuantity
-		fill pricePerUnit
-		fill orderDiscount
-		fill orderDate
-		fill customerName
-		fill customerStreet
-		fill customerCity
-		fill customerState
-		fill customerZip
-		choose cardType
-		fill customerCardNo
-		fill customerCardExpDate
-		click okButton
-		};	
-}
-
-*/		
-		
+	
