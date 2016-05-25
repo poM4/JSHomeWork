@@ -21,7 +21,7 @@ function cOrders() {
     var oWindow = oProcess.FindChild("WPFControlName", "MainForm", 3);
     if (oWindow.Exists && oWindow.Visible) {
       Log.Message("Orders window visiable and enabled");
-      } else {
+    } else {
       Log.Error("Orders window is not visible and enabled");
     };
 		
@@ -62,9 +62,9 @@ function cOrders() {
 
   //-------------------------------------
   //Creating order with data
-  this.FillForm = function(productType, productQuantity) {
+  this.FillForm = function(/*array of parameters*/) {
     var cForm = new oForm();
-    var clientInfo = new Array();
+//    var clientInfo = new Array();
         
     oForm.setComboBox(productType);
     oForm.setTextBoxValue(productQuantity);
@@ -80,7 +80,7 @@ function cOrders() {
     oForm.setTextBoxValue(customerCardNumber);
 		oForm.setTextBoxValue(customerCardExpDate);
 		cForm.setClickButton (okButton);
-		};	
+		};
   };
 
   //-------------------------------------
@@ -93,9 +93,9 @@ function cOrders() {
     
     //action
     if (this.oldRows + 1 == this.iNewRow) {
-    Log.Message("Order was created");
+      Log.Message("Order was created");
     } else {
-    Log.Error("Order was not created");
+      Log.Error("Order was not created");
     };
   };
   

@@ -3,8 +3,8 @@
 function cGrid (oGrid) {
 	this.getRowCount = function() {
 	};
-	this.getColCount = function() (
-	);
+	this.getColCount = function() {
+	};
 	this.getSearchRow = function() {
 	};
 	this.setSelectRow = function() {
@@ -25,7 +25,7 @@ function cTextBox(oTextBox) {
 	//action
 	this.setValue = function (sValue) {
 		if (!isValid()) return false;
-		if (typeof(sValue) = !="object" || sValue == undefined || sValue = null) {
+		if (typeof(sValue) != "object" || sValue == undefined || sValue = null) {
 			Log.Error ("Wrong data type, expected string", "Actual type: " + typeof(sValue));
 			return false;
 		};
@@ -35,7 +35,7 @@ function cTextBox(oTextBox) {
     cTextBox.wText.Keys(sValue);
 
   this.getValue = function (sValue) {
-  //TODO
+  //????TODO
   };
 	
 	//post-action
@@ -61,7 +61,7 @@ function cDateBox(oDateBox) {
   //action
 	this.setValue = function (sValue) {
 		if (!isValid()) return false;
-		if (typeof(sValue) = !="object" || sValue == undefined || sValue = null) {
+		if (typeof(sValue) !="object" || sValue == undefined || sValue = null) {
 			Log.Error("Wrong data type, expected string", "Actual type: " + typeof(sValue));
 			return false;
 		};
@@ -110,9 +110,8 @@ function cCancelButton(oCancelButton) {
 };
 
 
-
-
-
+//-------------------------------------
+//Filling Order Form
 function cForm(oForm) {
 		//pre-action
 	function isValid() {
@@ -143,5 +142,5 @@ function cForm(oForm) {
     
     };
 		//post-action
-		check if data was filled
-}
+		//check if data was filled
+};

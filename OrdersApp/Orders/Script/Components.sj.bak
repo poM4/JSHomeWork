@@ -39,7 +39,7 @@ function CreateOrder() {
     return false;
   };
   oOrders.ClickMainMenuItem("Orders|New order...")
-  oOrders.FillForm([array]);
+  oOrders.FillForm(/*array of controls*/);
   var rowCountAfter = oGrid.getRowCount();
 	
 	//Check order created
@@ -74,7 +74,15 @@ function EditOrder() {
 //Deleting Order
 function DeleteOrder() {
 	//pre-action
-	check order with index exists
+	if (!oOrders.isRrunning) {
+		return false;
+	} else {
+		StartApp();
+	};
+  
+  if(!oCreatedOrder.exists) {
+    return false;
+  } else CreateOrder();
 	
 	//action
 	delete order

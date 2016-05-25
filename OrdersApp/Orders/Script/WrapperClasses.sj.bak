@@ -3,8 +3,8 @@
 function cGrid (oGrid) {
 	this.getRowCount = function() {
 	};
-	this.getColCount = function() (
-	);
+	this.getColCount = function() {
+	};
 	this.getSearchRow = function() {
 	};
 	this.setSelectRow = function() {
@@ -12,7 +12,6 @@ function cGrid (oGrid) {
 }
 
 //-------------------------------------
-
 //Filling TextBox
 function cTextBox(oTextBox) {
 	//pre-action
@@ -26,25 +25,18 @@ function cTextBox(oTextBox) {
 	//action
 	this.setValue = function (sValue) {
 		if (!isValid()) return false;
-		if (typeof(sValue) = !="object" || sValue == undefined || sValue = null) {
+		if (typeof(sValue) != "object" || sValue == undefined || sValue = null) {
 			Log.Error ("Wrong data type, expected string", "Actual type: " + typeof(sValue));
 			return false;
 		};
   }; 	
-  
-  
-  
-  
-  this.getValue = function (sValue) {
-    //TODO
-  
-  };
-  
-    
-    
+
     //setting text
     cTextBox.wText.Keys(sValue);
 
+  this.getValue = function (sValue) {
+  //TODO
+  };
 	
 	//post-action
   if (this.getValue() == sValue) {
@@ -56,10 +48,10 @@ function cTextBox(oTextBox) {
 
 //-------------------------------------
 //Filling DateBox
-function cRadioButton(oRadioButton) {
+function cDateBox(oDateBox) {
 	//pre-action
 	function isValid() {
-		if (typeof(oTextBox) == "object" && !oTextBox.Exists) {
+		if (typeof(oDateBox) == "object" && !oDateBox.Exists) {
 			Log.Error("Control is not set or not exists")
 			return false;
 		}
@@ -69,14 +61,14 @@ function cRadioButton(oRadioButton) {
   //action
 	this.setValue = function (sValue) {
 		if (!isValid()) return false;
-		if (typeof(sValue) = !="object" || sValue == undefined || sValue = null) {
+		if (typeof(sValue) !="object" || sValue == undefined || sValue = null) {
 			Log.Error("Wrong data type, expected string", "Actual type: " + typeof(sValue));
 			return false;
 		};
   }; 	
   
   //setting text
-  cTextBox.wText.Keys(sValue);
+  cDateBox.wText.Keys(sValue);
 
 	
 	  //post-action
@@ -119,7 +111,7 @@ function cCancelButton(oCancelButton) {
 
 
 
-
+ 
 
 function cForm(oForm) {
 		//pre-action
@@ -137,7 +129,7 @@ function cForm(oForm) {
     };
     this.setTextBoxValue = function(sValue) {
       var cTextBox = new oTextBox();
-      oTextBox.setValue(sValue)
+      oTextBox.setValue(sValue);
     };
     
     
@@ -151,5 +143,5 @@ function cForm(oForm) {
     
     };
 		//post-action
-		check if data was filled
-}
+		//check if data was filled
+};
